@@ -7,4 +7,7 @@
 #include <unistd.h>
 #         unistd.h header file provides access to the POSIX operating system API.
 
+#include <string.h>
+# string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters.
+
 #endif
