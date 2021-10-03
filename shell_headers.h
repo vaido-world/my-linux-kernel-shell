@@ -10,4 +10,7 @@
 #include <string.h>
 //        string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters.
 
+#include <stdlib.h>
+// The stdlib.h header defines four variable types, several macros, and various functions for performing general functions.
+
 #endif
