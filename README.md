@@ -1,1 +1,2 @@
-# my-linux-kernel-shell
+# Linux Shell
+A basic modular Linux shell, command interpreter.
