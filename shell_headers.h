@@ -13,4 +13,7 @@
 #include <stdlib.h>
 //        stdlib.h header defines four variable types, several macros, and various functions for performing general functions.
 
+#include <sys/wait.h>
+//        sys/wait.h header file declares the functions, used for holding processes.
+
 #endif

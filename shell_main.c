@@ -10,11 +10,7 @@
 
 *******************************************************************************/
 
-#include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "shell_headers.h"
 
 /*
   Function Declarations for builtin shell commands:
