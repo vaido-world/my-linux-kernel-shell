@@ -8,5 +8,6 @@ This can be done by GNU C Compile or Tiny C Compiler as per recent testing.
 After this, execute the `compile_shell` binary and the rest of the project will be compiled.   
 ```
 gcc compile_shell.c && a.out
+tcc -run compile_shell.c
 
 ```
