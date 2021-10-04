@@ -67,7 +67,7 @@ int lsh_cd(char **args)
 int lsh_help(char **args)
 {
   int i;
-  printf("Stephen Brennan's LSH\n");
+  printf("Stephen Brennan's Revised Shell\n");
   printf("Type program names and arguments, and hit enter.\n");
   printf("The following are built in:\n");
 
@@ -142,16 +142,16 @@ int lsh_execute(char **args)
   return lsh_launch(args);
 }
 
-#define LSH_RL_BUFSIZE 1024
+#define LSH_RL_line_buffer_size 1024
 /**
    @brief Read a line of input from stdin.
    @return The line from stdin.
  */
 char *lsh_read_line(void)
 {
-  int bufsize = LSH_RL_BUFSIZE;
-  int position = 0;
-  char *buffer = malloc(sizeof(char) * bufsize);
+  int line_buffer_size = LSH_RL_line_buffer_size;
+  int line_token_position = 0;
+  char *buffer = malloc(sizeof(char) * line_buffer_size);
   int c;
 
   if (!buffer) {
@@ -165,17 +165,17 @@ char *lsh_read_line(void)
 
     // If we hit EOF, replace it with a null character and return.
     if (c == EOF || c == '\n') {
-      buffer[position] = '\0';
+      buffer[line_token_position] = '\0';
       return buffer;
     } else {
-      buffer[position] = c;
+      buffer[line_token_position] = c;
     }
-    position++;
+    line_token_position++;
 
     // If we have exceeded the buffer, reallocate.
-    if (position >= bufsize) {
-      bufsize += LSH_RL_BUFSIZE;
-      buffer = realloc(buffer, bufsize);
+    if (line_token_position >= line_buffer_size) {
+      line_buffer_size += LSH_RL_line_buffer_size;
+      buffer = realloc(buffer, line_buffer_size);
       if (!buffer) {
         fprintf(stderr, "lsh: allocation error\n");
         exit(EXIT_FAILURE);
@@ -184,63 +184,9 @@ char *lsh_read_line(void)
   }
 }
 
-#define LSH_TOK_BUFSIZE 64
-#define LSH_TOK_DELIM " \t\r\n\a"
-/**
-   @brief Split a line into tokens (very naively).
-   @param line The line.
-   @return Null-terminated array of tokens.
- */
-char **lsh_split_line(char *line)
-{
-  int bufsize = LSH_TOK_BUFSIZE, position = 0;
-  char **tokens = malloc(bufsize * sizeof(char*));
-  char *token;
-
-  if (!tokens) {
-    fprintf(stderr, "lsh: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
-
-  token = strtok(line, LSH_TOK_DELIM);
-  while (token != NULL) {
-    tokens[position] = token;
-    position++;
-
-    if (position >= bufsize) {
-      bufsize += LSH_TOK_BUFSIZE;
-      tokens = realloc(tokens, bufsize * sizeof(char*));
-      if (!tokens) {
-        fprintf(stderr, "lsh: allocation error\n");
-        exit(EXIT_FAILURE);
-      }
-    }
-
-    token = strtok(NULL, LSH_TOK_DELIM);
-  }
-  tokens[position] = NULL;
-  return tokens;
-}
-
-/**
-   @brief Loop getting input and executing it.
- */
-void lsh_loop(void)
-{
-  char *line;
-  char **args;
-  int status;
-
-  do {
-    printf("> ");
-    line = lsh_read_line();
-    args = lsh_split_line(line);
-    status = lsh_execute(args);
-
-    free(line);
-    free(args);
-  } while (status);
-}
+#include "shell_main_split_line.c"
+#include "shell_main_command_loop.c"
+/*Inverse dependecy: lowest include is most depenant on the others above*/
 
 /**
    @brief Main entry point.
@@ -253,7 +199,7 @@ int main(int argc, char **argv)
   // Load config files, if any.
 
   // Run command loop.
-  lsh_loop();
+  shell_command_loop();
 
   // Perform any shutdown/cleanup.
 
