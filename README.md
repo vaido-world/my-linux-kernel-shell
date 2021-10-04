@@ -9,5 +9,4 @@ After this, execute the `compile_shell` binary and the rest of the project will 
 ```
 gcc compile_shell.c && ./a.out
 tcc -run compile_shell.c
-
 ```
