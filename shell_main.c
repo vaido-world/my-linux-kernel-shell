@@ -145,7 +145,7 @@ int lsh_execute(char **args)
 #include "shell_main_read_command_line.c"
 #include "shell_main_split_command_line.c"
 #include "shell_main_command_loop.c"
-/*Inverse dependecy: lowest include is most depenant on the others above*/
+/*Reverse dependecy: lowest include is most depenant on the others above*/
 
 /**
    @brief Main entry point.
