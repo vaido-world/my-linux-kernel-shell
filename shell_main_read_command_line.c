@@ -15,11 +15,11 @@ char *shell_read_line(void)
     exit(EXIT_FAILURE);
   }
   
-  
- int loop_forever;
- int line_character = getchar();
- for (line_character; loop_forever = 1; line_character = getchar(), line_token_position++){
-	 
+  int loop_forever;
+
+  do {
+    int line_character = getchar();
+	
 	// If we hit EOF, replace it with a null line_character and return.
     if (line_character == EOF || line_character == '\n') {
       line_buffer[line_token_position] = '\0';
@@ -28,6 +28,7 @@ char *shell_read_line(void)
 	
 	// line_character assignation
 	line_buffer[line_token_position] = line_character;
+	line_token_position++;
 	
     // If we have exceeded the line_buffer, reallocate.
     if (line_token_position >= line_buffer_size) {
@@ -38,7 +39,11 @@ char *shell_read_line(void)
         exit(EXIT_FAILURE);
       }
     }
-	 
-	 
- }
+	  
+  } while( loop_forever = 1 );
+  
+  
+  
+  
+
 }
