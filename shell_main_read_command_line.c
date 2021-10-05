@@ -16,7 +16,6 @@ char *shell_read_line(void)
   }
   
   int loop_forever;
-
   do {
     int line_character = getchar();
 	
