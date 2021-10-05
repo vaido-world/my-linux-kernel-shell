@@ -67,7 +67,7 @@ int lsh_cd(char **args)
 int lsh_help(char **args)
 {
   int i;
-  printf("Stephen Brennan's Revised Shell\n");
+  printf("Public Domain Shell by a cooked egg\n");
   printf("Type program names and arguments, and hit enter.\n");
   printf("The following are built in:\n");
 
@@ -147,44 +147,9 @@ int lsh_execute(char **args)
    @brief Read a line of input from stdin.
    @return The line from stdin.
  */
-char *lsh_read_line(void)
-{
-  int line_buffer_size = LSH_RL_line_buffer_size;
-  int line_token_position = 0;
-  char *buffer = malloc(sizeof(char) * line_buffer_size);
-  int c;
 
-  if (!buffer) {
-    fprintf(stderr, "lsh: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
-
-  while (1) {
-    // Read a character
-    c = getchar();
-
-    // If we hit EOF, replace it with a null character and return.
-    if (c == EOF || c == '\n') {
-      buffer[line_token_position] = '\0';
-      return buffer;
-    } else {
-      buffer[line_token_position] = c;
-    }
-    line_token_position++;
-
-    // If we have exceeded the buffer, reallocate.
-    if (line_token_position >= line_buffer_size) {
-      line_buffer_size += LSH_RL_line_buffer_size;
-      buffer = realloc(buffer, line_buffer_size);
-      if (!buffer) {
-        fprintf(stderr, "lsh: allocation error\n");
-        exit(EXIT_FAILURE);
-      }
-    }
-  }
-}
-
-#include "shell_main_split_line.c"
+#include "shell_main_read_command_line.c"
+#include "shell_main_split_command_line.c"
 #include "shell_main_command_loop.c"
 /*Inverse dependecy: lowest include is most depenant on the others above*/
 
