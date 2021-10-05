@@ -142,12 +142,6 @@ int lsh_execute(char **args)
   return lsh_launch(args);
 }
 
-#define LSH_RL_line_buffer_size 1024
-/**
-   @brief Read a line of input from stdin.
-   @return The line from stdin.
- */
-
 #include "shell_main_read_command_line.c"
 #include "shell_main_split_command_line.c"
 #include "shell_main_command_loop.c"
