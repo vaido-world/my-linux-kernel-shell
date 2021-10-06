@@ -58,6 +58,7 @@ int count_shell_number_builtins() {
  */
 int shell_builtin_command_cd(char **args)
 {
+  printf("%s", __func__);
   if (args[1] == NULL) {
     fprintf(stderr, "lsh: expected argument to \"cd\"\n");
   } else {
