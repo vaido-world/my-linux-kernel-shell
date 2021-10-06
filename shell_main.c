@@ -142,6 +142,13 @@ int lsh_launch(char **args)
  */
 int main(int argc, char **argv)
 {
+  int i;
+  for (i = 0; i < count_shell_number_builtins(); i++) {
+
+      printf("%i"), *shell_array_pointing_builtin_functions[i]; // Selects and executes from pointer list pointing to builtin functions
+    }
+
+	
   // Load config files, if any.
 
   // Run command loop.
