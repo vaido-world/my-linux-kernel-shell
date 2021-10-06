@@ -11,7 +11,7 @@ void shell_command_loop(void)
     printf("> ");
     shell_line = shell_read_line();
     shell_args = shell_split_line(shell_line);
-    shell_status = lsh_execute(shell_args);
+    shell_status = shell_execute(shell_args);
 
     free(shell_line);
     free(shell_args);
