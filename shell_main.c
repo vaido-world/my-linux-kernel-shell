@@ -37,6 +37,7 @@ The next part is an array of builtin command names, followed by an array of thei
 /*On return in shell_execute.c, the functions are executed by a pointer adressses & */
 
 /*Array of pointers pointing to builtin shell functions*/
+// https://stackoverflow.com/questions/252748/how-can-i-use-an-array-of-function-pointers
 int (*shell_array_pointing_builtin_functions[]) (char **) = {
   &shell_builtin_command_cd,
   &shell_builtin_command_help,
@@ -124,7 +125,7 @@ int main(int argc, char **argv)
 	
     printf("%s\n", *shell_array_pointing_builtin_functions[i]);
     }
-*/
+*/ 	
 	
   // Load config files, if any.
 
