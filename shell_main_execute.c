@@ -15,7 +15,7 @@ int shell_execute(char **args)
 
   for (i = 0; i < count_shell_number_builtins(); i++) {
     if (strcmp(args[0], shell_builtin_command_list[i]) == 0) {
-      return (*shell_array_pointing_builtin_functions[i])(args); // Selects and executes from pointer list pointing to  builtin functions
+      return (*shell_array_pointing_builtin_functions[i])(args); // Selects and executes from pointer list pointing to builtin functions
     }
   }
 
