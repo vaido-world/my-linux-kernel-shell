@@ -145,7 +145,7 @@ int main(int argc, char **argv)
   int i;
   for (i = 0; i < count_shell_number_builtins(); i++) {
 
-      printf("%i"), *shell_array_pointing_builtin_functions[i]; // Selects and executes from pointer list pointing to builtin functions
+      printf("%i\n"), *shell_array_pointing_builtin_functions[i]; // Selects and executes from pointer list pointing to builtin functions
     }
 
 	
