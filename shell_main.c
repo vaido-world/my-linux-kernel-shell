@@ -33,7 +33,6 @@ char *shell_builtin_command_list[] = {
 The next part is an array of builtin command names, followed by an array of their corresponding functions. This is so that, in the future, builtin commands can be added simply by modifying these arrays, rather than editing a large “switch” statement somewhere in the code. If you’re confused by the declaration of builtin_func, that’s OK! I am too. It’s an array of function pointers (that take array of strings and return an int). Any declaration involving function pointers in C can get really complicated. I still look up how function pointers are declared myself!1
 */
 
-
 /* Corresponding shell pointers to the commands below */
 /*On return in shell_execute.c, the functions are executed by a pointer adressses & */
 int (*shell_pointing_builtin_functions[]) (char **) = {
