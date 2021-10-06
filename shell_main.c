@@ -35,6 +35,8 @@ The next part is an array of builtin command names, followed by an array of thei
 
 /* Corresponding shell pointers to the commands below */
 /*On return in shell_execute.c, the functions are executed by a pointer adressses & */
+
+/*Array of pointers to builtin shell functions*/
 int (*shell_pointing_builtin_functions[]) (char **) = {
   &lsh_cd,
   &lsh_help,
