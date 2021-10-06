@@ -115,7 +115,7 @@ int shell_builtin_command_exit(char **args)
 int main(int argc, char **argv)
 {
 	
-
+/*
   int i;
   char str[200];
   for (i = 0; i < count_shell_number_builtins(); i++) {
@@ -124,7 +124,7 @@ int main(int argc, char **argv)
 	
     printf("%s\n", *shell_array_pointing_builtin_functions[i]);
     }
-
+*/
 	
   // Load config files, if any.
 
