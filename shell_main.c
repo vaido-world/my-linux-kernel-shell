@@ -142,10 +142,15 @@ int lsh_launch(char **args)
  */
 int main(int argc, char **argv)
 {
+	
+
   int i;
+  char str[200];
   for (i = 0; i < count_shell_number_builtins(); i++) {
 
-      printf("%i\n"), *shell_array_pointing_builtin_functions[i]; // Selects and executes from pointer list pointing to builtin functions
+ 
+	
+    printf("%s\n", *shell_array_pointing_builtin_functions[i]);
     }
 
 	
