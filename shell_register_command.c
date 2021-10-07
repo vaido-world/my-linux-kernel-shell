@@ -15,6 +15,12 @@ void add_command(char* command_name){
 	
 }
 
+void shell_command_cd(){
+	
+	printf("yes");
+}
+
+
 
 int main()
     {
