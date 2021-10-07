@@ -9,7 +9,9 @@ void add_command(char* command_name){
 	if (last_token != NULL) {
 		printf("\nLast token: '%s'\n", last_token+1);
 	}
-
+	
+	int command_pointer_address = &command_name;
+	printf("\nIs the function declared?: '%i'\n", command_pointer_address);
 	
 }
 
@@ -19,7 +21,7 @@ int main()
 	// shell_convert_builtin_function_to_command
     shell_register_command(shell_command_cd);
     shell_register_command(shell_command_goto);
-	
+	shell_register_command(shell_command_gotos);
 
 	
 	
