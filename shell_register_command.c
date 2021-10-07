@@ -16,6 +16,7 @@ void add_command(char* command_name){
 
 int main()
     {
+	// shell_convert_builtin_function_to_command
     shell_register_command(shell_command_cd);
     shell_register_command(shell_command_goto);
 	
