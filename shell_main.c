@@ -38,6 +38,8 @@ The next part is an array of builtin command names, followed by an array of thei
 
 /*Array of pointers pointing to builtin shell functions*/
 // https://stackoverflow.com/questions/252748/how-can-i-use-an-array-of-function-pointers
+
+// https://stackoverflow.com/questions/5488608/how-define-an-array-of-function-pointers-in-c/5488718#5488718
 int (*shell_array_pointing_builtin_functions[]) (char **) = {
   &shell_builtin_command_cd,
   &shell_builtin_command_help,
