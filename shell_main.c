@@ -48,7 +48,7 @@ int count_shell_number_builtins() {
   return sizeof(shell_builtin_command_list) / sizeof(char *);
 }
 
-int count_shell_number_builtins_calls() {
+int return_count_shell_number_builtins_calls() {
   return sizeof(shell_array_pointing_builtin_functions) / sizeof(char *);
 }
 
@@ -121,7 +121,7 @@ int main(int argc, char **argv)
 {
 	
 	
-	printf("%i commands are available", count_shell_number_builtins_calls());
+	printf("%i commands are available", return_count_shell_number_builtins_calls());
 /*
   int i;
   char str[200];
