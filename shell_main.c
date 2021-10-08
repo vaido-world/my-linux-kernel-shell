@@ -122,6 +122,10 @@ int main(int argc, char **argv)
 	
 	
 	printf("%i commands are available", return_count_shell_number_builtins_calls());
+	shell_array_pointing_builtin_functions[return_count_shell_number_builtins_calls() +1] = &shell_builtin_command_exit;
+	printf("%i commands are available", return_count_shell_number_builtins_calls());
+	
+	
 /*
   int i;
   char str[200];
