@@ -53,7 +53,7 @@ The next part is an array of builtin command names, followed by an array of thei
 // Adds "pointers to functions that take char** as arguments" to an array shell_array_pointing_builtin_functions[] 
 // An array of "pointers pointing to functions" and each function take char as argument.
 
-//      *shell_array_pointing_builtin_functions[] - Array of pointers
+//      *shell_array_pointing_builtin_functions[] - Array of pointers to functions
 //  int      is the return of  shell_builtin_command_
 // (char **) is the argument of the shell_builtin_command_
 int (*shell_array_pointing_builtin_functions[]) (char **) = {
