@@ -45,6 +45,7 @@ The next part is an array of builtin command names, followed by an array of thei
 
 
 // Points to char array and returns int
+
 // Adds "pointers to functions that take char** as arguments" to an array shell_array_pointing_builtin_functions[] 
 int (*shell_array_pointing_builtin_functions[]) (char **) = {
   &shell_builtin_command_cd,
