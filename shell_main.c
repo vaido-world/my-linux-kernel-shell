@@ -148,6 +148,7 @@ int main(int argc, char **argv)
 	printf("%i commands are available", return_count_shell_number_builtins_calls());
 	
 	/*https://stackoverflow.com/a/840669/3789797*/
+// https://garbagevalue.com/bs/let-us-c-solutions/chapter-16-miscellaneous-features/c-13/create-an-array-of-four-function-pointers-each-pointer-should-point-to-a-different-function-each-o
 /*
   int i;
   char str[200];
