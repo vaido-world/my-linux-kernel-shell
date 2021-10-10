@@ -24,8 +24,7 @@ int shell_builtin_command_exit(char **args);
  */
 char *shell_builtin_command_list[] = {
   "cd",
-  "help",
-  "exit"
+  "help"
 };
 
 /*
@@ -58,8 +57,7 @@ The next part is an array of builtin command names, followed by an array of thei
 // (char **) is the argument of the shell_builtin_command_
 int (*shell_array_pointing_builtin_functions[]) (char **) = {
   &shell_builtin_command_cd,
-  &shell_builtin_command_help,
-  &shell_builtin_command_exit
+  &shell_builtin_command_help
 };
 
 int count_shell_number_builtins() {
@@ -140,7 +138,10 @@ int main(int argc, char **argv)
 	
 	
 	printf("%i commands are available", return_count_shell_number_builtins_calls());
-	shell_array_pointing_builtin_functions[return_count_shell_number_builtins_calls() +1] = &shell_builtin_command_exit;
+	shell_array_pointing_builtin_functions[return_count_shell_number_builtins_calls()] = &shell_builtin_command_exit;
+	shell_builtin_command_list[count_shell_number_builtins()] = "exit";
+
+	printf("%i commands are available", count_shell_number_builtins());	
 	printf("%i commands are available", return_count_shell_number_builtins_calls());
 	
 	
