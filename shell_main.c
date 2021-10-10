@@ -147,7 +147,7 @@ int main(int argc, char **argv)
 	printf("%i commands are available", count_shell_number_builtins());	
 	printf("%i commands are available", return_count_shell_number_builtins_calls());
 	
-	
+	/*https://stackoverflow.com/a/840669/3789797*/
 /*
   int i;
   char str[200];
@@ -155,9 +155,10 @@ int main(int argc, char **argv)
 
  
 	
-    printf("%s\n", *shell_array_pointing_builtin_functions[i]);
+    printf(" %s %i\n", *shell_array_pointing_builtin_functions[i]);
     }
 */ 	
+
 	
   // Load config files, if any.
 
