@@ -43,7 +43,7 @@ The next part is an array of builtin command names, followed by an array of thei
 
 // https://stackoverflow.com/questions/840501/how-do-function-pointers-in-c-work
 // https://www.cprogramming.com/tutorial/function-pointers.html
-
+// https://www.youtube.com/watch?v=p4sDgQ-jao4
 
 
 // Points to char array and returns int
