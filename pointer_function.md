@@ -19,8 +19,7 @@ int main(){
 	function("It's Regular function");
 	
 	//____Pointer function call____
-	void (*pointer_to_function) (char *);
-	pointer_to_function = function; // alternative syntax:  pointer_to_function = &function;
+	void (*pointer_to_function) (char *) = &function;
 	pointer_to_function("An actual Pointer function");
 	
 	return 0;
