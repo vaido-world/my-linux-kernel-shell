@@ -2,6 +2,10 @@
 
 A pointer function is a variable that points to a function.
 
+![snapshot-1](https://user-images.githubusercontent.com/21064622/136799684-267cbc4c-3053-43b1-a6e0-303ffa831e54.png)
+
+
+
 ### Syntax
 `function_return_type (*new_variable_name)(function_argument, function_argument..) = &name_of_the_function;`  
 `int (*example1)(int, char *) = &func`  
@@ -33,7 +37,5 @@ Output:
 a program function called. It's Regular function
 a program function called. An actual Pointer function
 ```
-![snapshot-1](https://user-images.githubusercontent.com/21064622/136799684-267cbc4c-3053-43b1-a6e0-303ffa831e54.png)
-
 
 Annoation made with https://sourceforge.net/projects/hotshots/
