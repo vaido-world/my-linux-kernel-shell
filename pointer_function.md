@@ -33,3 +33,5 @@ Output:
 a program function called. It's Regular function
 a program function called. An actual Pointer function
 ```
+![snapshot](https://user-images.githubusercontent.com/21064622/136798780-f6348f9d-51f9-49b3-9876-a34b21f4673b.png)
+
