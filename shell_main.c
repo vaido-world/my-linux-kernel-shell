@@ -46,6 +46,7 @@ The next part is an array of builtin command names, followed by an array of thei
 // https://www.youtube.com/watch?v=p4sDgQ-jao4
 // https://www.youtube.com/watch?v=sZ8GJ1TiMdk
 // https://publications.gbdirect.co.uk/c_book/chapter5/function_pointers.html
+// https://beginnersbook.com/2014/01/c-function-pointers/
 
 
 // Points to char array and returns int
