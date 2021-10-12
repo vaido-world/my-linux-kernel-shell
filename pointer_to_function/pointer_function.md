@@ -14,19 +14,21 @@ Ampersand is not required and is only for readability.
 ### Simple pointer pointing to function example
 
 ```
-void function(char * argument){
+int function(char * argument){
 	printf("\na program function called. ");
 	printf(argument);
+	return 1212;
 }
 
 int main(){
 	function("It's Regular function");
 	
-	void (*pointer_to_function) (char *) = &function;
-	pointer_to_function("An actual Pointer function");
-	
+	int (*pointer_to_function) (char *) = &function;
+	int returned = pointer_to_function("An actual Pointer function");
+	printf("\nreturnedvalue: %i",returned);
 	return 0;
 }
+
 
 
 ```
