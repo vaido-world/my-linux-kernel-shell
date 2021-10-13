@@ -18,7 +18,7 @@ void declared_function2(char *name){
 
 typedef void (*functionType)(char *);           
                           
-
+  // https://stackoverflow.com/questions/572547/what-does-static-mean-in-c
   int static capacity = 0;     // initial capacity
   int static initial_size = 0;  // initial size
   functionType static *functions;
