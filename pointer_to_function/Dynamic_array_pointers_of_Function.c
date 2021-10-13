@@ -1,4 +1,5 @@
 // Resource: https://stackoverflow.com/questions/30277776/how-do-i-create-a-dynamic-array-of-function-pointers/30277817#30277817
+// TODO: https://levelup.gitconnected.com/alternatives-to-global-variables-34982becfcc
 // tcc -b -run Dynamic_array_pointers_of_Function.c
 #include <stdio.h>
 void declared_function(char *name){
