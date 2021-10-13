@@ -18,17 +18,18 @@ void declared_function2(char *name){
 
 typedef void (*functionType)(char *);           
                           
-functionType static *functions; // dynamic array
 
   int static capacity = 0;     // initial capacity
   int static initial_size = 0;  // initial size
-	
+  functionType static *functions;
+
+
 void add_dynamic_array(void * function_address){
 	
 
 	
 
-  functions = malloc(capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array
+
 
   // ...
 
@@ -51,7 +52,7 @@ int main() {
 
 
 
-
+  functions = malloc(capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array; // dynamic array
   add_dynamic_array(&declared_function);
   add_dynamic_array(&declared_function2);
   functions[1]("asd");
