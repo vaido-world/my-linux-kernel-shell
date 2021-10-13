@@ -23,8 +23,8 @@ int main() {
 
   // adding element and need more space
   if (initial_size >= capacity) {
-	 capacity += sizeof(functionType);
-     functions = realloc(functions, capacity);
+	 capacity += 1;
+     functions = realloc(functions, capacity * sizeof(functionType));
      functions[initial_size++] = &declared_function;
   }
   
