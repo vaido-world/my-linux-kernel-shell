@@ -33,7 +33,7 @@ void add_dynamic_array(void * function_address){
   }
   
 printf("\n array_capacity %i", capacity);
-functions[0]("asd");
+
 	
 	
 }
@@ -46,5 +46,6 @@ int main() {
 
 
   add_dynamic_array(&declared_function);
+  functions[0]("asd");
   free(functions);
 }
