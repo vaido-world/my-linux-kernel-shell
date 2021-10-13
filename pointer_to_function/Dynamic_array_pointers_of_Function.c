@@ -6,6 +6,11 @@ void declared_function(char *name){
 
 }
 
+void declared_function2(char *name){
+	printf("\nI'm Second declared function");
+
+}
+
 
 
 #include <stdlib.h>
@@ -14,13 +19,15 @@ void declared_function(char *name){
 typedef void (*functionType)(char *);           
                           
 functionType *functions; // dynamic array
+
+  int static capacity = 0;     // initial capacity
+  int static initial_size = 0;  // initial size
 	
 void add_dynamic_array(void * function_address){
 	
 
 	
-  int capacity = 0;     // initial capacity
-  int initial_size = 0;  // initial size
+
   functions = malloc(capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array
 
   // ...
@@ -46,6 +53,7 @@ int main() {
 
 
   add_dynamic_array(&declared_function);
-  functions[0]("asd");
+  add_dynamic_array(&declared_function2);
+  functions[1]("asd");
   free(functions);
 }
