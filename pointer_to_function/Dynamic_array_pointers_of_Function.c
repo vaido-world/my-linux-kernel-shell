@@ -10,11 +10,15 @@ void declared_function(char *name){
 
 #include <stdlib.h>
 
-typedef void (*functionType)(char *);                                     
 
+typedef void (*functionType)(char *);           
+                          
 functionType *functions; // dynamic array
+	
+void add_dynamic_array(){
+	
 
-int main() {
+	
   int capacity = 0;     // initial capacity
   int initial_size = 0;  // initial size
   functions = malloc(capacity*sizeof(functionType));  // heap dynamic array
@@ -23,17 +27,24 @@ int main() {
 
   // adding element and need more space
   if (initial_size >= capacity) {
-	 capacity++;
+	 capacity += 1;
      functions = realloc(functions, capacity * sizeof(functionType));
      functions[initial_size++] = &declared_function;
   }
   
 printf("\n array_capacity %i", capacity);
 functions[0]("asd");
+	
+	
+}
 
 
 
-  
-  
+int main() {
+
+
+
+
+  add_dynamic_array();
   free(functions);
 }
