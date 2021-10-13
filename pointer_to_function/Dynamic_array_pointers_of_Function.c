@@ -55,6 +55,7 @@ int main() {
   functions = malloc(capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array; // dynamic array
   add_dynamic_array(&declared_function);
   add_dynamic_array(&declared_function2);
+  functions[0]("asd");
   functions[1]("asd");
   free(functions);
 }
