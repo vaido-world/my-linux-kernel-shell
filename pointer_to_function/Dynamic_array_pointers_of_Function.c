@@ -21,7 +21,7 @@ void add_dynamic_array(){
 	
   int capacity = 0;     // initial capacity
   int initial_size = 0;  // initial size
-  functions = malloc(capacity*sizeof(functionType));  // heap dynamic array
+  functions = malloc(capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array
 
   // ...
 
