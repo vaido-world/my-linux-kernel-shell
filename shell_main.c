@@ -48,6 +48,7 @@ The next part is an array of builtin command names, followed by an array of thei
 // https://publications.gbdirect.co.uk/c_book/chapter5/function_pointers.html // Well made array
 // https://beginnersbook.com/2014/01/c-function-pointers/  // barebones syntax
 // https://www.geeksforgeeks.org/function-pointer-in-c/
+// https://stackoverflow.com/questions/30277776/how-do-i-create-a-dynamic-array-of-function-pointers
 
 // Points to char array and returns int
 
