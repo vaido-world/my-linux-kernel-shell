@@ -15,7 +15,7 @@ typedef void (*functionType)(char *);
                           
 functionType *functions; // dynamic array
 	
-void add_dynamic_array(void * funk){
+void add_dynamic_array(void * function_address){
 	
 
 	
@@ -29,7 +29,7 @@ void add_dynamic_array(void * funk){
   if (initial_size >= capacity) {
 	 capacity += 1;
      functions = realloc(functions, capacity * sizeof(functionType));
-     functions[initial_size++] = funk;
+     functions[initial_size++] = function_address;
   }
   
 printf("\n array_capacity %i", capacity);
