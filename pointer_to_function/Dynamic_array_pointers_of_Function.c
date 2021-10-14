@@ -16,10 +16,9 @@ void declared_function2(char *args){
 
 
 typedef void (*functionType)(char *);  
-functionType static *functions;                              
-int static array_capacity = 0; // initial capacity
-int static initial_size = 0;   // initial size
-// https://stackoverflow.com/questions/572547/what-does-static-mean-in-c
+functionType *functions;                              
+int array_capacity = 0; // initial capacity
+int initial_size = 0;   // initial size
 
 void add_dynamic_array(void * function_address){
 	array_capacity += 1;
