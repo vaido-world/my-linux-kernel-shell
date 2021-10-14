@@ -18,13 +18,16 @@ void declared_function2(char *args){
 typedef void (*functionType)(char *);  
 functionType *functions;                              
 int array_capacity = 0; // initial capacity
+int array_capacity_in_bytes = 0; // initial capacity
 int array_initial_size = 0;   // initial size
 
 void add_to_heap_dynamic_array(void * function_address){
-	array_capacity += 1;
-    functions = realloc(functions, array_capacity * sizeof(functionType));
+	array_capacity++;
+	array_capacity_in_bytes=array_capacity * sizeof(functionType);
+    functions = realloc(functions, array_capacity_in_bytes);
     functions[array_initial_size++] = function_address;  
 	printf("array_capacity %i\n", array_capacity);
+    printf("array_capacity_in_bytes: %i\n", array_capacity_in_bytes);
 	
 	
 }
@@ -37,5 +40,6 @@ int main() {
   add_to_heap_dynamic_array(&declared_function2);
   functions[0]("asd");
   functions[1]("asd");
+
   free(functions);
 }
