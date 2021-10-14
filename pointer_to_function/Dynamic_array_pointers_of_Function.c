@@ -16,7 +16,8 @@ void declared_function2(char *args){
 
 
 typedef void (*functionType)(char *);  
-functionType *functions;                              
+functionType *functions;    
+                          
 int array_capacity_in_elements = 0; // initial capacity
 int array_capacity_in_bytes = 0; // initial capacity
 int array_initial_size = 0;   // initial size
