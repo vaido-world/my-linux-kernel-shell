@@ -18,12 +18,12 @@ void declared_function2(char *args){
 typedef void (*functionType)(char *);  
 functionType *functions;                              
 int array_capacity = 0; // initial capacity
-int initial_size = 0;   // initial size
+int array_initial_size = 0;   // initial size
 
 void add_dynamic_array(void * function_address){
 	array_capacity += 1;
     functions = realloc(functions, array_capacity * sizeof(functionType));
-    functions[initial_size++] = function_address;  
+    functions[array_initial_size++] = function_address;  
 	printf("array_capacity %i\n", array_capacity);
 	
 	
