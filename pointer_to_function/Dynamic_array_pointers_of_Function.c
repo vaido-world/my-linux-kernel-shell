@@ -24,7 +24,7 @@ int commands_array_initial_size = 0;   // initial size
 
 void add_to_heap_dynamic_array(void * function_address){
 	commands_array_capacity_in_elements++;
-	commands_array_capacity_in_bytes=commands_array_capacity_in_elements * sizeof(functionType);
+	commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
 	
     functions = realloc(functions, commands_array_capacity_in_bytes);
     functions[commands_array_initial_size++] = function_address;  
@@ -38,7 +38,7 @@ void add_to_heap_dynamic_array(void * function_address){
 
 
 int main() {
-  commands_array_capacity_in_bytes=commands_array_capacity_in_elements * sizeof(functionType);
+  commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
   functions = malloc(commands_array_capacity_in_bytes);  // heap dynamic array, instead of stack static array; // dynamic array
   
   add_to_heap_dynamic_array(&declared_function);
