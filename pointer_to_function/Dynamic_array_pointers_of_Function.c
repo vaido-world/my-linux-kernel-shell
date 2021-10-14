@@ -23,6 +23,7 @@ int functions_calls_array_capacity_in_elements = 0;
 int functions_calls_array_capacity_in_bytes = 0;
 int functions_calls_array_initial_size = 0;  
 
+// https://stackoverflow.com/questions/5935933/dynamically-create-an-array-of-strings-with-malloc
 int functions_names_array_capacity_in_elements = 0;
 int functions_names_array_capacity_in_bytes = 0;
 int functions_names_array_initial_size = 0;  
