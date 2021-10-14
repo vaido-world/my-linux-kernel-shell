@@ -20,7 +20,7 @@ functionType *functions;
 int array_capacity = 0; // initial capacity
 int array_initial_size = 0;   // initial size
 
-void add_dynamic_array(void * function_address){
+void add_to_heap_dynamic_array(void * function_address){
 	array_capacity += 1;
     functions = realloc(functions, array_capacity * sizeof(functionType));
     functions[array_initial_size++] = function_address;  
@@ -33,8 +33,8 @@ void add_dynamic_array(void * function_address){
 
 int main() {
   functions = malloc(array_capacity*sizeof(functionType));  // heap dynamic array, instead of stack static array; // dynamic array
-  add_dynamic_array(&declared_function);
-  add_dynamic_array(&declared_function2);
+  add_to_heap_dynamic_array(&declared_function);
+  add_to_heap_dynamic_array(&declared_function2);
   functions[0]("asd");
   functions[1]("asd");
   free(functions);
