@@ -22,6 +22,10 @@ int commands_array_capacity_in_elements = 0; // initial capacity
 int commands_array_capacity_in_bytes = 0; // initial capacity
 int commands_array_initial_size = 0;   // initial size
 
+int functions_names_array_capacity_in_elements = 0;
+int functions_names_array_capacity_in_bytes = 0; //
+int functions_names_array_initial_size = 0;   // in
+
 void add_to_heap_dynamic_array(void * function_address){
 	commands_array_capacity_in_elements++;
 	commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
