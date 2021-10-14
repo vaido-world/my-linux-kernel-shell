@@ -38,7 +38,7 @@ void add_to_heap_dynamic_array(void * function_address){
 
 
 int main() {
-  commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
+
   functions_calls_heap = malloc(commands_array_capacity_in_bytes);  // heap dynamic array, instead of stack static array; // dynamic array
   
   add_to_heap_dynamic_array(&declared_function);
