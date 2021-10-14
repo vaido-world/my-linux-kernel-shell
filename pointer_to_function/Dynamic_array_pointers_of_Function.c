@@ -24,8 +24,10 @@ int array_initial_size = 0;   // initial size
 void add_to_heap_dynamic_array(void * function_address){
 	array_capacity_in_elements++;
 	array_capacity_in_bytes=array_capacity_in_elements * sizeof(functionType);
+	
     functions = realloc(functions, array_capacity_in_bytes);
     functions[array_initial_size++] = function_address;  
+	
 	printf("array_capacity_in_elements %i\n", array_capacity_in_elements);
     printf("array_capacity_in_bytes: %i\n", array_capacity_in_bytes);
 	
