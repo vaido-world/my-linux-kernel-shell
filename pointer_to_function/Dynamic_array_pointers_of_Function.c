@@ -16,7 +16,7 @@ void declared_function2(char *args){
 
 
 typedef void (*functionType)(char *);  
-functionType *functions;    
+functionType *functions_heap;    
                           
 int commands_array_capacity_in_elements = 0; // initial capacity
 int commands_array_capacity_in_bytes = 0; // initial capacity
@@ -26,8 +26,8 @@ void add_to_heap_dynamic_array(void * function_address){
 	commands_array_capacity_in_elements++;
 	commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
 	
-    functions = realloc(functions, commands_array_capacity_in_bytes);
-    functions[commands_array_initial_size++] = function_address;  
+    functions_heap = realloc(functions_heap, commands_array_capacity_in_bytes);
+    functions_heap[commands_array_initial_size++] = function_address;  
 	
 	printf("commands_array_capacity_in_elements %i\n", commands_array_capacity_in_elements);
     printf("commands_array_capacity_in_bytes: %i\n", commands_array_capacity_in_bytes);
@@ -39,13 +39,13 @@ void add_to_heap_dynamic_array(void * function_address){
 
 int main() {
   commands_array_capacity_in_bytes = commands_array_capacity_in_elements * sizeof(functionType);
-  functions = malloc(commands_array_capacity_in_bytes);  // heap dynamic array, instead of stack static array; // dynamic array
+  functions_heap = malloc(commands_array_capacity_in_bytes);  // heap dynamic array, instead of stack static array; // dynamic array
   
   add_to_heap_dynamic_array(&declared_function);
   add_to_heap_dynamic_array(&declared_function2);
   
-  functions[0]("asd");
-  functions[1]("asd");
+  functions_heap[0]("asd");
+  functions_heap[1]("asd");
 
-  free(functions);
+  free(functions_heap);
 }
