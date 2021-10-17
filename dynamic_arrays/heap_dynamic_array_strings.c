@@ -6,13 +6,13 @@ void main(){
 
 	size_t termination_symbol_size = 1;
 	char * dynamic_string;
-	char * initialcharacters = "Carla_";
+	char * initialcharacters = "Word_";
 
 
 	dynamic_string = malloc(strlen(initialcharacters) + termination_symbol_size);
 	strcpy(dynamic_string, initialcharacters);
 	
-	char * newcharacters = "$$$$$";
+	char * newcharacters = "name";
 	
 	dynamic_string = realloc(dynamic_string, strlen(newcharacters) + strlen(initialcharacters) + termination_symbol_size);
 	strcat(dynamic_string, newcharacters);

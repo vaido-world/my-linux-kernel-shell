@@ -13,12 +13,6 @@ int count_shell_number_builtins() {
 #define shell_register_command(command_name) add_command(#command_name)
 void add_command(char* command_name){
     printf("Command to be registered: %s", command_name);
-
-
-
-
-
-	
 	
 	char *last_token = strstr(command_name, "command_");
 	if (last_token != NULL) {
