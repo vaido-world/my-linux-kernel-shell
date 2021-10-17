@@ -1,22 +1,22 @@
-// tcc -b -run heap_dynamic_array_strings.c
+// tcc -b -run heap_dynamic_array_dynamic_strings.c
 #include <stdio.h>
 #include <stdlib.h>
 
 void main(){
 
 	size_t termination_symbol_size = 1;
-	char * string;
+	char * dynamic_string;
 	char * initialcharacters = "Carla_";
 
 
-	string = malloc(strlen(initialcharacters) + termination_symbol_size);
-	strcpy(string, initialcharacters);
+	dynamic_string = malloc(strlen(initialcharacters) + termination_symbol_size);
+	strcpy(dynamic_string, initialcharacters);
 	
 	char * newcharacters = "$$$$$";
 	
-	string = realloc(string, strlen(newcharacters) + strlen(initialcharacters) + termination_symbol_size);
-	strcat(string, newcharacters);
+	dynamic_string = realloc(dynamic_string, strlen(newcharacters) + strlen(initialcharacters) + termination_symbol_size);
+	strcat(dynamic_string, newcharacters);
 	
-	printf(string);
-	free(string);
+	printf(dynamic_string);
+	free(dynamic_string);
 }
