@@ -5,15 +5,16 @@
 void main(){
 
 	size_t termination_symbol_size = 1;
-	char * initialcharacters = "Carla_";
 	char * string;
-	
+	char * initialcharacters = "Carla_";
+
+
 	string = malloc(strlen(initialcharacters) + termination_symbol_size);
 	strcpy(string, initialcharacters);
 	
 	char * newcharacters = "$$$$$";
 	
-	string = realloc(string, strlen(newcharacters) + strlen(string) + termination_symbol_size);
+	string = realloc(string, strlen(newcharacters) + strlen(initialcharacters) + termination_symbol_size);
 	strcat(string, newcharacters);
 	
 	printf(string);
