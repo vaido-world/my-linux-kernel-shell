@@ -15,19 +15,10 @@ void add_command(char* command_name){
     printf("Command to be registered: %s", command_name);
 
 
-	int i;
-	int index = 0;
-
-	for (i = 0; i < 100; i++)
-	{
-		if (someCondition)
-		{
-			someArray[index++] = someValue;
-		}
-	}
 
 
-	shell_array_pointing_builtin_functions
+
+	
 	
 	char *last_token = strstr(command_name, "command_");
 	if (last_token != NULL) {
